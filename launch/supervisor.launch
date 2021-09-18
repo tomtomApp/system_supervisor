@@ -1,0 +1,8 @@
+<launch>
+
+  
+
+  <!-- supervisor node  -->
+  <node pkg="supervisor" name="supervisor" type="supervisor"/>
+  
+</launch>

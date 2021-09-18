@@ -9,7 +9,7 @@ find_package(catkin REQUIRED
 
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES obstacle_avoidance
+#  LIBRARIES supervisor
    CATKIN_DEPENDS roscpp sensor_msgs geometry_msgs
 #  DEPENDS system_lib
 )
@@ -18,3 +18,6 @@ include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
 )
+
+add_executable(supervisor src/supervisor.cpp)
+target_link_libraries(supervisor ${catkin_LIBRARIES})
