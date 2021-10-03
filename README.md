@@ -37,6 +37,9 @@ ADIS16470から、/imu/data (sensor_msgs/Imu)を取得
 - [urg_node](https://github.com/TSUKUBA-CHALLENGE/urg_node)  
 北陽lidarから/scanデータを取得
 
+- [ublox_f9p](https://github.com/TSUKUBA-CHALLENGE/ublox_f9p)  
+ZED-F9Pからgpsデータを取得
+
 # システム構成
 
 - sensor_fusion  
