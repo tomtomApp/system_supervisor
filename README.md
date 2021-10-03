@@ -21,3 +21,6 @@ PS4コントローラーでロボットの操縦を行う。自律移動以外�
 
 - [sensor_fusion](https://github.com/TSUKUBA-CHALLENGE/sensor_fusion)  
 robot_localizationを使用して、odom->base_link, map->base_link間の移動量推定をimu, odom, gpsから推定
+
+- [gps_waypoint_navigation](https://github.com/TSUKUBA-CHALLENGE/gps_waypoint_navigation)  
+事前に設定したwaypoint(緯度、経度)をUTM座標、map座標系に変換してgoalとして順にpublish
