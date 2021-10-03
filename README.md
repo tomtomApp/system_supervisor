@@ -37,6 +37,9 @@ ADIS16470から、/imu/data (sensor_msgs/Imu)を取得
 - [urg_node](https://github.com/TSUKUBA-CHALLENGE/urg_node)  
 北陽lidarから/scanデータを取得
 
+- [rplidar_ros](https://github.com/TSUKUBA-CHALLENGE/rplidar_ros)  
+rplidarから/scanデータを取得
+
 - [ublox_f9p](https://github.com/TSUKUBA-CHALLENGE/ublox_f9p)  
 ZED-F9Pからgpsデータを取得
 
@@ -46,7 +49,7 @@ ZED-F9Pからgpsデータを取得
 odrive_odometry, adi_driver, ublox_gpsパッケージを使用
 
 - ira_laser_tools  
-rplidar, urg_nodeを使用
+rplidar_ros, urg_nodeを使用
 
 - 独立パッケージ  
 joy_to_twist, map_switching, gps_waypoint_navigation, cirkit_waypoint_manager
