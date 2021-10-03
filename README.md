@@ -37,6 +37,17 @@ ADIS16470から、/imu/data (sensor_msgs/Imu)を取得
 - [urg_node](https://github.com/TSUKUBA-CHALLENGE/urg_node)  
 北陽lidarから/scanデータを取得
 
+# システム構成
+
+- sensor_fusion  
+odrive_odometry, adi_driver, ublox_gpsパッケージを使用
+
+- ira_laser_tools  
+rplidar, urg_nodeを使用
+
+- 独立パッケージ  
+joy_to_twist, map_switching, gps_waypoint_navigation, cirkit_waypoint_manager
+
 # 参考資料
 
 - robot_localization
