@@ -51,6 +51,14 @@ rplidar, urg_nodeを使用
 - 独立パッケージ  
 joy_to_twist, map_switching, gps_waypoint_navigation, cirkit_waypoint_manager
 
+# navigation方法
+現時点で以下の2種類
+
+- cirkit_waypoint_managerをベースとしたnavigation
+- gps_waypoint_navigationをベースとしたnavigation
+
+最終的に実用性のある方を採用
+
 # 参考資料
 
 - robot_localization
