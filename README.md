@@ -15,3 +15,6 @@ PS4コントローラーでロボットの操縦を行う。自律移動以外�
 
 - [map_switching](https://github.com/TSUKUBA-CHALLENGE/map_switching)  
 ロボットの現在位置(map->base_link)とwaypointを基にmapを切り替える
+
+- [odrive_odometry](https://github.com/TSUKUBA-CHALLENGE/odrive_odometry)  
+インホイールモーターからエンコーダ値を取得し、odom(odom->base_link)を
