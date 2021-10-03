@@ -24,3 +24,6 @@ robot_localizationを使用して、odom->base_link, map->base_link間の移動�
 
 - [gps_waypoint_navigation](https://github.com/TSUKUBA-CHALLENGE/gps_waypoint_navigation)  
 事前に設定したwaypoint(緯度、経度)をUTM座標、map座標系に変換してgoalとして順にpublish
+
+- [cirkit_waypoint_manager](https://github.com/TSUKUBA-CHALLENGE/cirkit_waypoint_manager)  
+事前に設定したwaypoint(map->base_link)をgoalとして順にpublish
