@@ -27,3 +27,6 @@ robot_localizationを使用して、odom->base_link, map->base_link間の移動�
 
 - [cirkit_waypoint_manager](https://github.com/TSUKUBA-CHALLENGE/cirkit_waypoint_manager)  
 事前に設定したwaypoint(map->base_link)をgoalとして順にpublish
+
+- [ira_laser_tools](https://github.com/TSUKUBA-CHALLENGE/ira_laser_tools)  
+複数のlidarの/scan情報を統合
