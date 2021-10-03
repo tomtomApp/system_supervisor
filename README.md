@@ -17,4 +17,7 @@ PS4コントローラーでロボットの操縦を行う。自律移動以外�
 ロボットの現在位置(map->base_link)とwaypointを基にmapを切り替える
 
 - [odrive_odometry](https://github.com/TSUKUBA-CHALLENGE/odrive_odometry)  
-インホイールモーターからエンコーダ値を取得し、odom(odom->base_link)を
+インホイールモーターからエンコーダ値を取得し、odom(odom->base_link)をpublish
+
+- [sensor_fusion](https://github.com/TSUKUBA-CHALLENGE/sensor_fusion)  
+robot_localizationを使用して、odom->base_link, map->base_link間の移動量推定をimu, odom, gpsから推定
