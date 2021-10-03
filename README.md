@@ -34,6 +34,9 @@ robot_localizationを使用して、odom->base_link, map->base_link間の移動�
 - [adi_driver](https://github.com/TSUKUBA-CHALLENGE/adi_driver)  
 ADIS16470から、/imu/data (sensor_msgs/Imu)を取得
 
+- [urg_node](https://github.com/TSUKUBA-CHALLENGE/urg_node)  
+北陽lidarから/scanデータを取得
+
 # 参考資料
 
 http://docs.ros.org/en/melodic/api/robot_localization/html/integrating_gps.html
