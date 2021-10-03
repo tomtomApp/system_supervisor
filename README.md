@@ -39,4 +39,14 @@ ADIS16470から、/imu/data (sensor_msgs/Imu)を取得
 
 # 参考資料
 
+- robot_localization
+
 http://docs.ros.org/en/melodic/api/robot_localization/html/integrating_gps.html
+
+- gps関連
+
+https://github.com/ros-agriculture/ublox_f9p
+
+https://github.com/hrjp/kcctgnss/blob/main/launch/gnss.launch
+
+https://github.com/swri-robotics/gps_umd
