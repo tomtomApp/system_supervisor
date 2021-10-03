@@ -30,3 +30,7 @@ robot_localizationを使用して、odom->base_link, map->base_link間の移動�
 
 - [ira_laser_tools](https://github.com/TSUKUBA-CHALLENGE/ira_laser_tools)  
 複数のlidarの/scan情報を統合
+
+# 参考資料
+
+http://docs.ros.org/en/melodic/api/robot_localization/html/integrating_gps.html
