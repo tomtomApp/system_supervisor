@@ -1,4 +1,4 @@
-# supervisor
+# system_supervisor
 システム全体の管理
 
 管理対象は以下のリポジトリ
