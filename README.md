@@ -60,7 +60,7 @@ joy_to_twist, map_switching, gps_waypoint_navigation, cirkit_waypoint_manager
 - cirkit_waypoint_managerをベースとしたnavigation
 - gps_waypoint_navigationをベースとしたnavigation
 
-最終的に実用性のある方を採用
+最終的に実用性のある方を採用(現状はcirkit_waypoint_managerを採用予定)
 
 # 参考資料
 
