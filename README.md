@@ -43,6 +43,8 @@ rplidarから/scanデータを取得
 - [ublox_f9p](https://github.com/TSUKUBA-CHALLENGE/ublox_f9p)  
 ZED-F9Pからgpsデータを取得
 
+- [velocity smoother](https://github.com/RyuYamamoto/velocity_smoother)
+
 # システム構成
 
 - sensor_fusion  
