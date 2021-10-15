@@ -1,12 +1,33 @@
 <launch>
+    <!-- Tf static publish -->
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_imu" args="0 0 0 0 0 0 base_link imu 100" />
+    <node pkg="tf" type="static_transform_publisher" name="gps_transform" args="0 0 0 0 0 0 base_link gps 100"/>
+  
+    <!-- Scan publish -->
+    <include file="$(find ira_laser_tools)/launch/merge_hokuyo_rplidar.launch" />
 
-  <!-- Run laser scan_matcher navigation -->
-  <include file="$(find laser_scan_matcher_navigation)/launch/navigation.launch" />
+    <!-- IMU publish -->
+    <include file="$(find adi_driver)/launch/adis16470.launch" />
 
-  <!-- Run obstacle aboidance -->
-  <include file="$(find obstacle_avoidance)/launch/obstacle_avoidance.launch" />
+    <!-- GPS publish -->
+    <include file="$(find ublox_gps)/launch/ublox_zed-f9p.launch" />
+    
+    <!-- Odom publish -->
+    <include file="$(find odrive_odometry)/launch/odometry_publisher.launch" />
 
-  <!-- supervisor node  -->
-  <node pkg="supervisor" name="supervisor" type="supervisor"/>
+    <!-- Run robot localization -->
+    <include file="$(find sensor_fusion)/launch/only_sensor_fusion.launch" />
+
+    <!-- Run laser scan_matcher navigation -->
+    <include file="$(find laser_scan_matcher_navigation)/launch/only_navigation.launch" />
+    
+    <!-- Run waypoint navigation -->
+    <include file="$(find cirkit_waypoint_navigator)/launch/waypoint_publisher.launch" />
+
+    <!-- Run obstacle aboidance -->
+    <include file="$(find obstacle_avoidance)/launch/obstacle_avoidance.launch" />
+
+    <!-- supervisor node  -->
+    <node pkg="supervisor" name="supervisor" type="supervisor"/>
   
 </launch>
