@@ -7,6 +7,6 @@
   <include file="$(find obstacle_avoidance)/launch/obstacle_avoidance.launch" />
 
   <!-- supervisor node  -->
-  <node pkg="supervisor" name="supervisor" type="supervisor"/>
+  <node pkg="system_supervisor" name="supervisor" type="supervisor"/>
   
 </launch>

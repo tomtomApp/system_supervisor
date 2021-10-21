@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(supervisor)
+project(system_supervisor)
 
 find_package(catkin REQUIRED
     roscpp
@@ -9,7 +9,7 @@ find_package(catkin REQUIRED
 
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES supervisor
+#  LIBRARIES system_supervisor
    CATKIN_DEPENDS roscpp sensor_msgs geometry_msgs
 #  DEPENDS system_lib
 )

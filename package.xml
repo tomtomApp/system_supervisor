@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>supervisor</name>
+  <name>system_supervisor</name>
   <version>0.0.0</version>
-  <description>The supervisor package</description>
+  <description>The system_supervisor package</description>
 
   <maintainer email="hatta@todo.todo">hatta</maintainer>
 
