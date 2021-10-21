@@ -10,19 +10,22 @@
     </node>
     
     <!-- Scan publish -->
-    <include file="$(find ira_laser_tools)/launch/merge_hokuyo_rplidar.launch" />
+    <!--<include file="$(find ira_laser_tools)/launch/merge_hokuyo_rplidar.launch" />-->
+    <!-- Scan publish -->
+    <node name="rplidarNode" pkg="rplidar_ros" type="rplidarNode" output="screen">
+        <param name="serial_port" type="string" value="/dev/ttyUSB0"/>
+        <!--<param name="serial_baudrate" type="int" value="115200"/>-->
+        <param name="serial_baudrate"     type="int"    value="256000"/>-->
+        <param name="frame_id" type="string" value="laser"/>
+        <param name="inverted" type="bool" value="false"/>
+        <param name="angle_compensate" type="bool" value="true"/>
+    </node>
 
     <!-- IMU publish -->
     <include file="$(find adi_driver)/launch/adis16470.launch" />
-
-    <!-- GPS publish -->
-    <include file="$(find ublox_gps)/launch/ublox_zed-f9p.launch" />
     
     <!-- Odom publish -->
     <include file="$(find odrive_odometry)/launch/odometry_publisher.launch" />
-
-    <!-- Run robot localization -->
-    <include file="$(find sensor_fusion)/launch/only_sensor_fusion.launch" />
 
     <!-- Run laser scan_matcher navigation -->
     <include file="$(find laser_scan_matcher_navigation)/launch/only_navigation.launch" />
