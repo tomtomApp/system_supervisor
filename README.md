@@ -10,8 +10,11 @@ PS4コントローラーでロボットの操縦を行う。自律移動以外�
 
 - [odrive_motor_control](https://github.com/Arcanain/odrive_motor_control)  
 
+- [raspicat_speak](https://github.com/Arcanain/raspicat_speak)  
 
+- [rpi_led_tape](https://github.com/Arcanain/rpi_led_tape) 
 
+Todolist
 
 # システム構成
 
