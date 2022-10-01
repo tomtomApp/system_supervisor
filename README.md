@@ -18,7 +18,13 @@ PS4コントローラーでロボットの操縦を行う。自律移動以外�
 
 - [nmea_navsat_driver](https://github.com/Arcanain/nmea_navsat_driver) 
 
+- [nmea_msgs](https://github.com/Arcanain/nmea_msgs) 
+
+- [ublox_f9p](https://github.com/Arcanain/ublox_f9p)  
+
 - [wit_node](https://github.com/Arcanain/wit_node)  
+
+- [rplidar_ros](https://github.com/Arcanain/rplidar_ros)  
 
 
 # システム構成
