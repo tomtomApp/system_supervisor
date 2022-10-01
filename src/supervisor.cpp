@@ -75,28 +75,28 @@ int main(int argc, char** argv)
     cmd_vel_keyboard_sub = nh.subscribe("/cmd_vel_keyboard", 10, cmd_vel_keyboard_callback);
     cmd_vel_automatic_sub = nh.subscribe("/cmd_vel_automatic", 10, cmd_vel_automatic_callback);
 
-    state_pub = nh.advertise<std_msgs::String>("/state", 10);
+    state_pub = nh.advertise<std_msgs::Int8>("/state", 10);
     cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
 
     ros::Rate loop_rate(50);
 
     while (ros::ok())
     {
-        std_msgs::String state_msg;
+        std_msgs::Int8 state_msg;
         //geometry_msgs::Twist cmd_vel_msg;
         
         int state_data;
         if (cmd_vel_joystick.linear.x != 0 || cmd_vel_joystick.angular.z != 0) {
-            state_msg.data = '1';
+            state_msg.data = 1;
             state_data = 1;
         } else if (cmd_vel_keyboard.linear.x != 0 || cmd_vel_keyboard.angular.z != 0) {
-            state_msg.data = '2';
+            state_msg.data = 2;
             state_data = 2;
         } else if (cmd_vel_automatic.linear.x != 0 || cmd_vel_automatic.angular.z != 0) {
-            state_msg.data = '3';
+            state_msg.data = 3;
             state_data = 3;
         } else {
-            state_msg.data = '4';
+            state_msg.data = 4;
             state_data = 4;
         }
 

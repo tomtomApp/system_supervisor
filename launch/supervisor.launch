@@ -1,9 +1,12 @@
 <launch>
     <!-- Odrive Control -->
-    <include file="$(find odrive_motor_control)/launch/odrive_keyboard_control.launch" />
+    <include file="$(find system_supervisor)/launch/odrive_control.launch" />
    
-    <!-- Led Tape Control -->
+    <!-- Ledtape Control -->
     <include file="$(find rpi_led_tape)/launch/ledtape_control.launch" />
+
+    <!-- Voice Control -->
+    <include file="$(find system_supervisor)/launch/voice_control.launch" />
 
     <!--pure_pursuit Control-->
     <include file="$(find system_supervisor)/launch/pure_pursuit.launch" />
