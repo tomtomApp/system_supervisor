@@ -1,10 +1,6 @@
 # system_supervisor
-システム全体の管理
 
 管理対象は以下のリポジトリ
-
-- [joy_to_twist](https://github.com/TSUKUBA-CHALLENGE/joy_to_twist)  
-PS4コントローラーでロボットの操縦を行う。自律移動以外の区間で使用
 
 - [mobile_robot_simulator](https://github.com/Arcanain/mobile_robot_simulator)  
 
@@ -15,6 +11,11 @@ PS4コントローラーでロボットの操縦を行う。自律移動以外�
 - [rpi_led_tape](https://github.com/Arcanain/rpi_led_tape) 
 
 Todolist
+- [joy_to_twist](https://github.com/TSUKUBA-CHALLENGE/joy_to_twist)  
+PS4コントローラーでロボットの操縦を行う。自律移動以外の区間で使用
+
+- [gnss_imu_odom_ESKF](https://github.com/Arcanain/gnss_imu_odom_ESKF) 
+
 
 # システム構成
 
