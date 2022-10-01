@@ -16,6 +16,10 @@ PS4コントローラーでロボットの操縦を行う。自律移動以外�
 
 - [gnss_imu_odom_ESKF](https://github.com/Arcanain/gnss_imu_odom_ESKF) 
 
+- [nmea_navsat_driver](https://github.com/Arcanain/nmea_navsat_driver) 
+
+- [wit_node](https://github.com/Arcanain/wit_node)  
+
 
 # システム構成
 
