@@ -10,4 +10,7 @@
 
     <!-- supervisor node -->
     <node pkg="system_supervisor" name="supervisor" type="supervisor" output="screen"/>
+
+    <!--rviz-->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find system_supervisor)/rviz/navigation.rviz" required="true"/>
 </launch>
