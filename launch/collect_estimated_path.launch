@@ -1,0 +1,39 @@
+<launch>
+    <!-- tf satic -->
+    <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 100" />
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_imu" args="0 0 0 0 0 0 base_link imu_link 100" />
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_gps" args="0 0 0 0 0 0 base_link gps 100" />
+
+    <!-- imu publish -->
+    <include file="$(find system_supervisor)/launch/wit_motion.launch" />
+
+    <!-- gps publish -->
+    <include file="$(find system_supervisor)/launch/nmea_serial_driver.launch" />
+
+    <!--/fix(sensor_msgs/NavSatFix) convert to /gps_path(nav_msgs/Path)-->
+    <node pkg="gnss_imu_odom_ESKF" name="eskf_localization" type="eskf_localization" output="screen"/>
+
+    <!--save path-->
+    <node pkg="mobile_robot_simulator" name="save_estimated_path" type="save_estimated_path.py" output="screen"/>
+
+    <!--connect odrive and subscribe /cmd_vel calcurlate odometry-->
+    <node pkg="odrive_motor_control" name="odrive_simple_twist_driver" type="odrive_simple_twist_driver.py" output="screen"/>
+
+    <!--keyboatd teleop publish /cmd_vel-->
+    <node pkg="odrive_motor_control" name="keyboard_teleop" type="keyboard_teleop.py" output="screen"/>
+
+    <!-- supervisor node -->
+    <node pkg="system_supervisor" name="supervisor" type="supervisor" output="screen"/>
+
+    <!-- Joystick Control -->
+    <include file="$(find joy_to_twist)/launch/joy_to_twist.launch" />
+    
+    <!-- Ledtape Control -->
+    <include file="$(find rpi_led_tape)/launch/ledtape_control.launch" />
+
+    <!-- Voice Control -->
+    <include file="$(find system_supervisor)/launch/voice_control.launch" />
+
+    <!--display rviz-->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gnss_imu_odom_ESKF)/rviz/imu_gnss_eskf_localization.rviz" required="true"/>
+</launch>

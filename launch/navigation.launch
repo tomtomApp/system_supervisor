@@ -2,6 +2,9 @@
     <!-- Odrive Control -->
     <include file="$(find system_supervisor)/launch/odrive_control.launch" />
    
+    <!-- Joystick Control -->
+    <include file="$(find joy_to_twist)/launch/joy_to_twist.launch" />
+    
     <!-- Ledtape Control -->
     <include file="$(find rpi_led_tape)/launch/ledtape_control.launch" />
 

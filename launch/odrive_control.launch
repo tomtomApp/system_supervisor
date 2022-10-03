@@ -1,6 +1,6 @@
 <launch>
     <!-- tf satic -->
-    <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 100" />
+    <!--<node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 100" />-->
     <!--connect odrive and subscribe /cmd_vel calcurlate odometry-->
     <node pkg="odrive_motor_control" name="odrive_twist_driver" type="odrive_twist_driver.py" output="screen"/>
     <!--keyboatd teleop publish /cmd_vel-->
