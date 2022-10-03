@@ -10,9 +10,7 @@
 
 - [rpi_led_tape](https://github.com/Arcanain/rpi_led_tape) 
 
-Todolist
 - [joy_to_twist](https://github.com/TSUKUBA-CHALLENGE/joy_to_twist)  
-PS4コントローラーでロボットの操縦を行う。自律移動以外の区間で使用
 
 - [gnss_imu_odom_ESKF](https://github.com/Arcanain/gnss_imu_odom_ESKF) 
 
@@ -24,8 +22,9 @@ PS4コントローラーでロボットの操縦を行う。自律移動以外�
 
 - [wit_node](https://github.com/Arcanain/wit_node)  
 
-- [rplidar_ros](https://github.com/Arcanain/rplidar_ros)  
+Todolist
 
+- [rplidar_ros](https://github.com/Arcanain/rplidar_ros)  
 
 # システム構成
 
