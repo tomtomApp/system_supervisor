@@ -28,6 +28,20 @@ Todolist
 
 # システム構成
 
+# data collect
+```
+roslaunch system_supervisor collect_path.launch 
+```
+
+or
+
+```
+roslaunch system_supervisor collect_estimated_path.launch 
+```
+
 # navigation方法
+```
+roslaunch system_supervisor navigation.launch 
+```
 
 # 参考資料
