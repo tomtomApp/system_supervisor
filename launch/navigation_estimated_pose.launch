@@ -17,17 +17,11 @@
     <!--/fix(sensor_msgs/NavSatFix) convert to /gps_path(nav_msgs/Path)-->
     <node pkg="gnss_imu_odom_ESKF" name="eskf_localization" type="eskf_localization" output="screen"/>
 
-    <!--save path-->
-    <node pkg="mobile_robot_simulator" name="save_estimated_path" type="save_estimated_path.py" output="screen"/>
-
     <!--connect odrive and subscribe /cmd_vel calcurlate odometry-->
     <node pkg="odrive_motor_control" name="odrive_simple_twist_driver" type="odrive_simple_twist_driver.py" output="screen"/>
-
+    
     <!--keyboatd teleop publish /cmd_vel-->
     <node pkg="odrive_motor_control" name="keyboard_teleop" type="keyboard_teleop.py" output="screen"/>
-
-    <!-- supervisor node -->
-    <node pkg="system_supervisor" name="supervisor" type="supervisor" output="screen"/>
 
     <!-- Joystick Control -->
     <include file="$(find joy_to_twist)/launch/joy_to_twist.launch" />
@@ -38,6 +32,12 @@
     <!-- Voice Control -->
     <include file="$(find system_supervisor)/launch/voice_control.launch" />
 
-    <!--display rviz-->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find system_supervisor)/rviz/collect_estimated_path.rviz" required="true"/>
+    <!--pure_pursuit Control-->
+    <include file="$(find system_supervisor)/launch/pure_pursuit_estimated_pose.launch" />
+
+    <!-- supervisor node -->
+    <node pkg="system_supervisor" name="supervisor" type="supervisor" output="screen"/>
+
+    <!--rviz-->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find system_supervisor)/rviz/navigation_estimated_pose.rviz" required="true"/>
 </launch>

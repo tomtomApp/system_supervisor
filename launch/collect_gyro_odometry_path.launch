@@ -2,13 +2,16 @@
     <!-- map server -->
     <arg name="map_file" default="$(find mobile_robot_simulator)/map/glbmap.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
-
-    <!-- Odrive Control -->
-    <node pkg="odrive_motor_control" name="odrive_twist_driver" type="odrive_twist_driver.py" output="screen"/>
     
+    <!-- imu publish -->
+    <include file="$(find system_supervisor)/launch/wit_motion.launch" />
+    
+    <!-- Odrive Control -->
+    <node pkg="odrive_motor_control" name="odrive_gyro_odometry" type="odrive_gyro_odometry.py" output="screen"/>
+   
     <!--keyboatd teleop publish /cmd_vel-->
     <node pkg="odrive_motor_control" name="keyboard_teleop" type="keyboard_teleop.py" output="screen"/>
-   
+
     <!-- Joystick Control -->
     <include file="$(find joy_to_twist)/launch/joy_to_twist.launch" />
     
@@ -18,12 +21,12 @@
     <!-- Voice Control -->
     <include file="$(find system_supervisor)/launch/voice_control.launch" />
 
-    <!--pure_pursuit Control-->
-    <include file="$(find system_supervisor)/launch/pure_pursuit.launch" />
-
+    <!--save path-->
+    <node pkg="mobile_robot_simulator" name="save_path" type="save_path.py" output="screen"/>
+    
     <!-- supervisor node -->
     <node pkg="system_supervisor" name="supervisor" type="supervisor" output="screen"/>
 
     <!--rviz-->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find system_supervisor)/rviz/navigation.rviz" required="true"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find system_supervisor)/rviz/collect_odometry_path.rviz" required="true"/>
 </launch>

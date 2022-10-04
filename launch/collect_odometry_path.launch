@@ -4,7 +4,10 @@
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
     
     <!-- Odrive Control -->
-    <include file="$(find system_supervisor)/launch/odrive_control.launch" />
+    <node pkg="odrive_motor_control" name="odrive_twist_driver" type="odrive_twist_driver.py" output="screen"/>
+    
+    <!--keyboatd teleop publish /cmd_vel-->
+    <node pkg="odrive_motor_control" name="keyboard_teleop" type="keyboard_teleop.py" output="screen"/>
    
     <!-- Joystick Control -->
     <include file="$(find joy_to_twist)/launch/joy_to_twist.launch" />

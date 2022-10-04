@@ -116,6 +116,18 @@ int main(int argc, char** argv)
             cmd_vel.angular.z = 0.0;
         }
 
+        // saturation
+        if (cmd_vel.linear.x > 0.3) {
+            cmd_vel.linear.x = 0.3;
+        } else if (cmd_vel.linear.x < -0.3) {
+            cmd_vel.linear.x = -0.3;
+        }
+        if (cmd_vel.angular.z > 2.0) {
+            cmd_vel.angular.z = 2.0;
+        } else if (cmd_vel.angular.z < -2.0) {
+            cmd_vel.angular.z = -2.0;
+        }
+        
         cmd_vel_pub.publish(cmd_vel);
 
         ros::spinOnce();
