@@ -29,6 +29,22 @@ Todolist
 # システム構成
 
 # data collect
+## STEP1
+```
+lsusb
+Bus 001 Device 009: ID 1209:0d32 Generic ODrive Robotics ODrive v3
+```
+
+```
+ls -al /dev/bus//usb//001/009
+crw-rw-r-- 1 root root 189, 8 5月 29 14:49 /dev/bus//usb//001/009
+```
+
+```
+sudo chmod 666 /dev/bus/usb/001/009
+```
+
+## STEP2
 ```
 roslaunch system_supervisor collect_path.launch 
 ```
@@ -40,8 +56,21 @@ roslaunch system_supervisor collect_estimated_path.launch
 ```
 
 # navigation方法
+## STEP1
+```
+lsusb
+Bus 001 Device 009: ID 1209:0d32 Generic ODrive Robotics ODrive v3
+```
+
+```
+ls -al /dev/bus//usb//001/009
+crw-rw-r-- 1 root root 189, 8 5月 29 14:49 /dev/bus//usb//001/009
+```
+
+```
+sudo chmod 666 /dev/bus/usb/001/009
+```
+## STEP2
 ```
 roslaunch system_supervisor navigation.launch 
 ```
-
-# 参考資料
