@@ -74,3 +74,9 @@ sudo chmod 666 /dev/bus/usb/001/009
 ```
 roslaunch system_supervisor navigation.launch 
 ```
+
+or
+
+```
+roslaunch system_supervisor navigation_estimated_pose.launch 
+```
