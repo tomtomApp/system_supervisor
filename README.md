@@ -52,6 +52,12 @@ roslaunch system_supervisor collect_path.launch
 or
 
 ```
+roslaunch system_supervisor collect_gyro_odometry_path.launch
+```
+
+or
+
+```
 roslaunch system_supervisor collect_estimated_path.launch 
 ```
 
@@ -76,6 +82,12 @@ roslaunch system_supervisor navigation.launch
 ```
 
 or
+
+```
+roslaunch system_supervisor navigation_gyro_odometry.launch
+```
+
+or 
 
 ```
 roslaunch system_supervisor navigation_estimated_pose.launch 
