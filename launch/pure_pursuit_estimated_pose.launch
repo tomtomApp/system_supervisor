@@ -4,6 +4,7 @@
     
     <!--pure pursuit-->
     <node pkg="mobile_robot_simulator" name="pure_pursuit_estimated_pose" type="pure_pursuit_estimated_pose" output="screen"/>
+    <!--<node pkg="mobile_robot_simulator" name="pure_pursuit_estimated_pose_adaptive_control" type="pure_pursuit_estimated_pose_adaptive_control" output="screen"/>-->
 
     <!--waypoint visualizer-->
     <node pkg="mobile_robot_simulator" name="waypoint_visualizer" type="waypoint_visualizer" output="screen"/>
