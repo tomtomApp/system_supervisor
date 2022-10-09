@@ -3,6 +3,11 @@
     <arg name="map_file" default="$(find mobile_robot_simulator)/map/glbmap.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
 
+    <!-- tf satic -->
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_imu" args="0 0 0 0 0 0 base_link imu_link 100" />
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_gps" args="0 0 0 0 0 0 base_link gps 100" />
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_laser" args="0 0 0 0 0 0 base_link laser 100" />
+
     <!-- imu publish -->
     <include file="$(find system_supervisor)/launch/wit_motion.launch" />
     
@@ -21,6 +26,9 @@
 
     <!-- Voice Control -->
     <include file="$(find system_supervisor)/launch/voice_control.launch" />
+
+    <!-- RPLidar S1 -->
+    <include file="$(find system_supervisor)/launch/rplidar_s1.launch" />
 
     <!--pure_pursuit Control-->
     <include file="$(find system_supervisor)/launch/pure_pursuit.launch" />

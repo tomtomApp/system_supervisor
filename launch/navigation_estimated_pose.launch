@@ -7,6 +7,7 @@
     <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 100" />
     <node pkg="tf" type="static_transform_publisher" name="baselink_to_imu" args="0 0 0 0 0 0 base_link imu_link 100" />
     <node pkg="tf" type="static_transform_publisher" name="baselink_to_gps" args="0 0 0 0 0 0 base_link gps 100" />
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_laser" args="0 0 0 0 0 0 base_link laser 100" />
 
     <!-- imu publish -->
     <include file="$(find system_supervisor)/launch/wit_motion.launch" />
@@ -16,6 +17,9 @@
 
     <!--/fix(sensor_msgs/NavSatFix) convert to /gps_path(nav_msgs/Path)-->
     <node pkg="gnss_imu_odom_ESKF" name="eskf_localization" type="eskf_localization" output="screen"/>
+
+    <!-- RPLidar S1 -->
+    <include file="$(find system_supervisor)/launch/rplidar_s1.launch" />
 
     <!--connect odrive and subscribe /cmd_vel calcurlate odometry-->
     <node pkg="odrive_motor_control" name="odrive_simple_twist_driver" type="odrive_simple_twist_driver.py" output="screen"/>
@@ -32,7 +36,7 @@
 
     <!-- Voice Control -->
     <include file="$(find system_supervisor)/launch/voice_control.launch" />
-
+    
     <!--pure_pursuit Control-->
     <include file="$(find system_supervisor)/launch/pure_pursuit_estimated_pose.launch" />
 
