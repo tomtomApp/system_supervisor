@@ -22,8 +22,6 @@
 
 - [wit_node](https://github.com/Arcanain/wit_node)  
 
-Todolist
-
 - [rplidar_ros](https://github.com/Arcanain/rplidar_ros)  
 
 # システム構成
