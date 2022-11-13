@@ -2,11 +2,15 @@
     <!-- map server -->
     <arg name="map_file" default="$(find mobile_robot_simulator)/map/glbmap.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
-    
+
+    <!-- tf satic -->
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_imu" args="0 0 0 0 0 0 base_link imu_link 100" />
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_gps" args="0 0 0 0 0 0 base_link gps 100" />
+    <node pkg="tf" type="static_transform_publisher" name="baselink_to_laser" args="0 0 0 0 0 0 base_link laser 100" />
+
     <!-- Odrive Control -->
     <node pkg="odrive_motor_control" name="odrive_twist_driver" type="odrive_twist_driver.py" output="screen"/>
-    <!--<node pkg="odrive_motor_control" name="odrive_twist_driver_four_wheel" type="odrive_twist_driver_four_wheel.py" output="screen"/>-->
-    
+
     <!--keyboatd teleop publish /cmd_vel-->
     <!--<node pkg="odrive_motor_control" name="keyboard_teleop" type="keyboard_teleop.py" output="screen"/>-->
    
@@ -22,16 +26,16 @@
     <!-- RPLidar S1 -->
     <!--<include file="$(find system_supervisor)/launch/rplidar_s1.launch" />-->
 
-    <!--save path-->
-    <node pkg="mobile_robot_simulator" name="save_path" type="save_path.py" output="screen"/>
-    
-    <!-- obstacle aboidance node  -->
-    <!--<node pkg="obstacle_avoidance" name="obstacle_avoidance_rplidar" type="obstacle_avoidance_rplidar"/>-->
+    <!--pure_pursuit Control-->
+    <include file="$(find system_supervisor)/launch/pure_pursuit_1110.launch" />
 
     <!-- supervisor node -->
     <node pkg="system_supervisor" name="supervisor" type="supervisor" output="screen"/>
     <!--<node pkg="system_supervisor" name="supervisor_obstacle_avoidance" type="supervisor_obstacle_avoidance" output="screen"/>-->
 
+    <!-- obstacle aboidance node  -->
+    <!--<node pkg="obstacle_avoidance" name="obstacle_avoidance_rplidar_test" type="obstacle_avoidance_rplidar_test"/>-->
+    
     <!--rviz-->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find system_supervisor)/rviz/collect_odometry_path.rviz" required="true"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find system_supervisor)/rviz/navigation.rviz" required="true"/>
 </launch>

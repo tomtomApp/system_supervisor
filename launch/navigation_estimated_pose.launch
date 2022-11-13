@@ -18,15 +18,12 @@
     <!--/fix(sensor_msgs/NavSatFix) convert to /gps_path(nav_msgs/Path)-->
     <node pkg="gnss_imu_odom_ESKF" name="eskf_localization" type="eskf_localization" output="screen"/>
 
-    <!-- RPLidar S1 -->
-    <include file="$(find system_supervisor)/launch/rplidar_s1.launch" />
-
     <!--connect odrive and subscribe /cmd_vel calcurlate odometry-->
-    <node pkg="odrive_motor_control" name="odrive_simple_twist_driver" type="odrive_simple_twist_driver.py" output="screen"/>
+    <node pkg="odrive_motor_control" name="odrive_simple_twist_driver" type="odrive_simple_twist_driver.py" output="screen"/>-->
     <!--<node pkg="odrive_motor_control" name="odrive_simple_twist_driver_four_wheel" type="odrive_simple_twist_driver_four_wheel.py" output="screen"/>-->
 
     <!--keyboatd teleop publish /cmd_vel-->
-    <node pkg="odrive_motor_control" name="keyboard_teleop" type="keyboard_teleop.py" output="screen"/>
+    <!--<node pkg="odrive_motor_control" name="keyboard_teleop" type="keyboard_teleop.py" output="screen"/>-->
 
     <!-- Joystick Control -->
     <include file="$(find joy_to_twist)/launch/joy_to_twist.launch" />
@@ -35,13 +32,21 @@
     <include file="$(find rpi_led_tape)/launch/ledtape_control.launch" />
 
     <!-- Voice Control -->
-    <include file="$(find system_supervisor)/launch/voice_control.launch" />
+    <!--<include file="$(find system_supervisor)/launch/voice_control.launch" />-->
     
+    <!-- RPLidar S1 -->
+    <!--<include file="$(find system_supervisor)/launch/rplidar_s1.launch" />-->
+
     <!--pure_pursuit Control-->
-    <include file="$(find system_supervisor)/launch/pure_pursuit_estimated_pose.launch" />
+    <!--<include file="$(find system_supervisor)/launch/pure_pursuit_estimated_pose.launch" />-->
+    <include file="$(find system_supervisor)/launch/pure_pursuit_estimated_test.launch" />
 
     <!-- supervisor node -->
     <node pkg="system_supervisor" name="supervisor" type="supervisor" output="screen"/>
+    <!--<node pkg="system_supervisor" name="supervisor_obstacle_avoidance" type="supervisor_obstacle_avoidance" output="screen"/>-->
+
+    <!-- obstacle aboidance node  -->
+    <!--<node pkg="obstacle_avoidance" name="obstacle_avoidance_rplidar_test" type="obstacle_avoidance_rplidar_test"/>-->
 
     <!--rviz-->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find system_supervisor)/rviz/navigation_estimated_pose.rviz" required="true"/>

@@ -21,3 +21,6 @@ include_directories(
 
 add_executable(supervisor src/supervisor.cpp)
 target_link_libraries(supervisor ${catkin_LIBRARIES})
+
+add_executable(supervisor_obstacle_avoidance src/supervisor_obstacle_avoidance.cpp)
+target_link_libraries(supervisor_obstacle_avoidance ${catkin_LIBRARIES})
