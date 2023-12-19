@@ -10,17 +10,17 @@
     <node pkg="tf" type="static_transform_publisher" name="baselink_to_laser" args="0 0 0 0 0 0 base_link laser 100" />
 
     <!-- imu publish -->
-    <include file="$(find system_supervisor)/launch/wit_motion.launch" />
+    <!--<include file="$(find system_supervisor)/launch/wit_motion.launch" />-->
 
     <!-- gps publish -->
     <!--<include file="$(find system_supervisor)/launch/nmea_serial_driver.launch" />-->
     <!--<include file="$(find ublox_gps)/launch/ublox_device.launch" />-->
 
     <!--/fix(sensor_msgs/NavSatFix) convert to /gps_path(nav_msgs/Path)-->
-    <node pkg="gnss_imu_odom_eskf" name="eskf_localization" type="eskf_localization" output="screen"/>
+    <!--<node pkg="gnss_imu_odom_eskf" name="eskf_localization" type="eskf_localization" output="screen"/>-->
 
     <!--connect odrive and subscribe /cmd_vel calcurlate odometry-->
-    <node pkg="odrive_motor_control" name="odrive_simple_twist_driver" type="odrive_simple_twist_driver.py" output="screen"/>
+    <node pkg="odrive_motor_control" name="odrive_simple_twist_driver" type="odrive_simple_twist_driver.py" output="screen"/>-->
 
 
     <!--keyboatd teleop publish /cmd_vel-->
@@ -38,7 +38,7 @@
 
     <!--pure_pursuit Control-->
     <!--<include file="$(find system_supervisor)/launch/pure_pursuit_estimated_pose.launch" />-->
-    <include file="$(find system_supervisor)/launch/pure_pursuit_estimated_test.launch" />
+    <include file="$(find system_supervisor)/launch/pure_pursuit_straight.launch" />
 
     <!-- supervisor node -->
     <node pkg="system_supervisor" name="supervisor" type="supervisor" output="screen"/>
